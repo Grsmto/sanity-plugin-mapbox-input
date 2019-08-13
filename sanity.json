@@ -1,0 +1,14 @@
+{
+  "paths": {
+    "source": "./src",
+    "compiled": "./lib"
+  },
+
+  "parts": [
+    {
+      "name": "part:@sanity/mapbox-input/input/geopoint",
+      "implements": "part:@sanity/form-builder/input/geopoint",
+      "path": "GeopointInput.js"
+    }
+  ]
+}

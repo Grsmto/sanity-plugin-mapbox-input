@@ -1,0 +1,56 @@
+{
+  "name": "sanity-plugin-mapbox-input",
+  "version": "0.0.1",
+  "description": "Sanity plugin providing input handlers for geo-related input types using Mapbox",
+  "main": "lib/index.js",
+  "author": "Adrien Denat",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src -d lib --copy-files",
+    "clean": "rimraf lib",
+    "start": "cd example && sanity start",
+    "prepublish": "in-publish && sanity-check || not-in-publish"
+  },
+  "keywords": [
+    "sanity",
+    "cms",
+    "headless",
+    "realtime",
+    "content",
+    "mapbox-input",
+    "sanity-plugin"
+  ],
+  "dependencies": {
+    "in-publish": "^2.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@sanity/base": "0.141.6",
+    "@sanity/check": "0.141.5",
+    "@sanity/cli": "0.141.6",
+    "@sanity/components": "0.141.6",
+    "@sanity/core": "0.141.6",
+    "babel-eslint": "^10.0.2",
+    "lodash": "^4.17.4",
+    "prop-types": "^15.6.0",
+    "react-map-gl": "^5.0.9",
+    "react-map-gl-geocoder": "^2.0.9",
+    "rimraf": "^2.6.2"
+  },
+  "peerDependencies": {
+    "react": "^16.2",
+    "react-dom": "^16.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanity-io/sanity.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sanity-io/sanity/issues"
+  },
+  "homepage": "https://www.sanity.io/",
+  "gitHead": "b3d61f46ec46c01c7918c10103e964220b5dc704"
+}
