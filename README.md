@@ -1,10 +1,9 @@
-# @sanity/google-maps-input
+# sanity-plugin-mapbox-input
 
-Sanity plugin providing input handlers for geo-related input types using Google Maps
-
+Sanity plugin providing input handlers for geo-related input types using Mapbox
 
 ## Example app
 
-First write a valid Google Maps API key into ``./example/config/@sanity/google-maps-input.json`` 
+First write a valid Mapbox API token into `./example/config/mapbox-input.json`
 
-Then ``npm start``
+Then `npm start`
