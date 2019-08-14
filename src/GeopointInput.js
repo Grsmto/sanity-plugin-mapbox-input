@@ -101,6 +101,7 @@ class GeopointInput extends React.Component {
               Geopoint type
             </a>{' '}
             needs a Mapbox API token.
+          </p>
           <p>
             Please enter the API token with access to these services in
             <code style={{ whitespace: 'nowrap' }}>
