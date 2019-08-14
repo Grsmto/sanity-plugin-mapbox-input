@@ -100,17 +100,11 @@ class GeopointInput extends React.Component {
             <a href="https://sanity.io/docs/schema-types/geopoint-type">
               Geopoint type
             </a>{' '}
-            needs a Google Maps API key with access to:
-          </p>
-          <ul>
-            <li>Google Maps JavaScript API</li>
-            <li>Google Places API Web Service</li>
-            <li>Google Static Maps API</li>
-          </ul>
+            needs a Mapbox API token.
           <p>
-            Please enter the API key with access to these services in
+            Please enter the API token with access to these services in
             <code style={{ whitespace: 'nowrap' }}>
-              `&lt;project-root&gt;/config/@sanity/google-maps-input.json`
+              `&lt;project-root&gt;/config/mapbox-input.json`
             </code>
           </p>
         </div>
