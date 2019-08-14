@@ -6,7 +6,7 @@
 
   "parts": [
     {
-      "name": "part:@sanity/mapbox-input/input/geopoint",
+      "name": "part:mapbox-input/input/geopoint",
       "implements": "part:@sanity/form-builder/input/geopoint",
       "path": "GeopointInput.js"
     }
