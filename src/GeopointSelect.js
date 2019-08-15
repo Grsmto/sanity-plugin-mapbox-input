@@ -40,13 +40,11 @@ class GeopointSelect extends React.Component {
   constructor(props) {
     super(props)
 
-    const { value, defaultLocation } = props
-
     this.state = {
       viewport: {
         latitude: this.getValueLatLng().lat,
         longitude: this.getValueLatLng().lng,
-        zoom: this.props.defaultZoom,
+        zoom: props.defaultZoom,
       },
     }
   }
@@ -68,7 +66,7 @@ class GeopointSelect extends React.Component {
   }
 
   getValueLatLng() {
-    const { value } = this.props
+    const { value, defaultLocation } = this.props
 
     return {
       lat: value ? value.lat : defaultLocation.lat,

@@ -9,7 +9,7 @@
     "build": "babel src -d lib --copy-files",
     "clean": "rimraf lib",
     "start": "cd example && sanity start",
-    "prepublish": "in-publish && sanity-check || not-in-publish"
+    "prepublish": "npm run build"
   },
   "keywords": [
     "sanity",
@@ -20,9 +20,7 @@
     "mapbox-input",
     "sanity-plugin"
   ],
-  "dependencies": {
-    "in-publish": "^2.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
@@ -46,10 +44,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sanity-io/sanity.git"
+    "url": "git+https://github.com/Grsmto/sanity-plugin-mapbox-input.git"
   },
   "bugs": {
-    "url": "https://github.com/sanity-io/sanity/issues"
+    "url": "https://github.com/Grsmto/sanity-plugin-mapbox-input/issues"
   },
   "homepage": "https://www.sanity.io/",
   "gitHead": "b3d61f46ec46c01c7918c10103e964220b5dc704"
