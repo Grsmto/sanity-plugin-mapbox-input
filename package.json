@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-mapbox-input",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Sanity plugin providing input handlers for geo-related input types using Mapbox",
   "main": "lib/index.js",
   "author": "Adrien Denat",
@@ -20,7 +20,12 @@
     "mapbox-input",
     "sanity-plugin"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "prop-types": "^15.6.0",
+    "react-map-gl": "^5.0.9",
+    "react-map-gl-geocoder": "^2.0.9"
+  },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
@@ -32,10 +37,6 @@
     "@sanity/components": "0.141.6",
     "@sanity/core": "0.141.6",
     "babel-eslint": "^10.0.2",
-    "lodash": "^4.17.4",
-    "prop-types": "^15.6.0",
-    "react-map-gl": "^5.0.9",
-    "react-map-gl-geocoder": "^2.0.9",
     "rimraf": "^2.6.2"
   },
   "peerDependencies": {
