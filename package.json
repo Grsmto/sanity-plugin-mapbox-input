@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-mapbox-input",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Sanity plugin providing input handlers for geo-related input types using Mapbox",
   "main": "lib/index.js",
   "author": "Adrien Denat",
