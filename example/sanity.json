@@ -14,10 +14,6 @@
   ],
   "parts": [
     {
-      "implements": "part:@sanity/base/root",
-      "path": "./Main"
-    },
-    {
       "implements": "part:@sanity/base/schema",
       "path": "./schema.js"
     }

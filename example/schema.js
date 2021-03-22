@@ -1,22 +1,17 @@
-import bundledTypes from 'part:@sanity/base/bundled-types'
-import {keyBy} from 'lodash'
-
-const keyedTypes = keyBy(bundledTypes.types, 'name')
-
 export default {
-  name: 'test',
-  types: [
-    keyedTypes.geopoint,
+  name: 'article',
+  title: 'Article',
+  type: 'document',
+  fields: [
     {
-      name: 'myTestLocation',
-      type: 'object',
-      fields: [
-        {
-          name: 'location',
-          type: 'geopoint',
-          title: 'Location'
-        }
-      ]
-    }
-  ]
+      name: 'title',
+      type: 'string',
+      title: 'Title',
+    },
+    {
+      name: 'location',
+      type: 'geopoint',
+      title: 'Location',
+    },
+  ],
 }
