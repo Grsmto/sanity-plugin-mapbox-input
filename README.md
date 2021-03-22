@@ -1,6 +1,8 @@
 # sanity-plugin-mapbox-input
 
-Sanity plugin providing input handlers for geo-related input types using Mapbox
+Sanity plugin providing input handlers for geo-related input types using Mapbox. 
+This plugin replaces the native Sanity `geopoint` type.
+
 
 ## Installation
 
@@ -9,6 +11,24 @@ Sanity plugin providing input handlers for geo-related input types using Mapbox
 - Then write a valid Mapbox API token into `./config/mapbox-input.json`
 
 - `npm start`
+
+## Usage
+Use the `geopoint` type in your schema. Ex:
+
+```js
+export default {
+  name: 'article',
+  title: 'Article',
+  type: 'document',
+  fields: [
+    {
+      name: 'location',
+      type: 'geopoint',
+      title: 'Location',
+    },
+  ],
+}
+```
 
 ## Screenshot
 
