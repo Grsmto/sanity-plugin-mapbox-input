@@ -2,11 +2,13 @@
 
 Sanity plugin providing input handlers for geo-related input types using Mapbox
 
-## Example app
+## Installation
 
-First write a valid Mapbox API token into `./example/config/mapbox-input.json`
+- `sanity install mapbox-input`
 
-Then `npm start`
+- Then write a valid Mapbox API token into `./example/config/mapbox-input.json`
+
+- `npm start`
 
 ## Screenshot
 
