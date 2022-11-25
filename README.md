@@ -3,6 +3,8 @@
 Sanity plugin providing input handlers for geo-related input types using Mapbox. 
 This plugin replaces the native Sanity `geopoint` type.
 
+:warning: The plugin doesn't seem to work anymore due to some incompatibility with latest Sanity Studio. Please see `sanity-plugin-leaflet-input` as an alternative. :warning:
+
 
 ## Installation
 
