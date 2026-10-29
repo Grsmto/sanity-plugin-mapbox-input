@@ -103,6 +103,7 @@ export const GeopointSelect: FC<GeopointSelectProps> = ({
       <Marker
         latitude={center.lat}
         longitude={center.lng}
+        anchor="bottom"
         draggable={Boolean(onChange)}
         onDragEnd={handleMarkerDragEnd}
       >
