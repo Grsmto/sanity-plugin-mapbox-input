@@ -30,9 +30,9 @@ export default defineConfig({
 })
 ```
 
-This plugin replaces the default `geopoint` input component.
+This plugin replaces the default `geopoint` input component. It also replaces the default array input when the array only contains `geopoint` items, so multiple points share a single map.
 
-Use a `geopoint` field in your schema:
+Use a `geopoint` field (or an array of them) in your schema:
 
 ```ts
 export default {
@@ -45,9 +45,17 @@ export default {
       type: 'geopoint',
       title: 'Location',
     },
+    {
+      name: 'locations',
+      type: 'array',
+      title: 'Locations',
+      of: [{type: 'geopoint'}],
+    },
   ],
 }
 ```
+
+Stored values stay Sanity-native (`geopoint` / `array` of `geopoint`). No custom type or migration is required. Arrays that mix `geopoint` with other types keep Sanity’s default array UI.
 
 ### Options
 

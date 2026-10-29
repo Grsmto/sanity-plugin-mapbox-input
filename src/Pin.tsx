@@ -12,15 +12,21 @@ const pinStyle = {
 
 interface PinProps {
   size?: number
+  active?: boolean
   onClick?: MouseEventHandler<SVGSVGElement>
 }
 
-export const Pin: FC<PinProps> = ({ size = 20, onClick }) => {
+export const Pin: FC<PinProps> = ({ size = 20, active = false, onClick }) => {
+  const resolvedSize = active ? size + 6 : size
+
   return (
     <svg
-      height={size}
+      height={resolvedSize}
       viewBox="0 0 24 24"
-      style={pinStyle}
+      style={{
+        ...pinStyle,
+        fill: active ? '#b00' : '#d00',
+      }}
       onClick={onClick}
     >
       <path d={ICON} />

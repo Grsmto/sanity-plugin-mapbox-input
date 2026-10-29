@@ -15,5 +15,11 @@ export const article = defineType({
       title: 'Location',
       type: 'geopoint',
     }),
+    defineField({
+      name: 'locations',
+      title: 'Locations',
+      type: 'array',
+      of: [{type: 'geopoint'}],
+    }),
   ],
 })
