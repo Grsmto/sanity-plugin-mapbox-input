@@ -1,0 +1,25 @@
+{
+  "name": "sanity-plugin-mapbox-input-playground",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "sanity dev",
+    "demo": "vite --config demo/vite.config.ts",
+    "build": "sanity build",
+    "start": "sanity start"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "sanity": "^6.20.0",
+    "sanity-plugin-mapbox-input": "file:..",
+    "styled-components": "^6.6.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "typescript": "~5.7.3",
+    "vite": "^8.3.5"
+  }
+}

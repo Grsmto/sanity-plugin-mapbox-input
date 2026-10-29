@@ -54,6 +54,9 @@ typings/
 # dotenv environment variables file
 .env
 
+# Sanity Studio local runtime
+.sanity/
+
 # gatsby files
 .cache/
 public
@@ -69,3 +72,5 @@ yarn-error.log
 .yarn-integrity
 
 lib
+dist
+*.tsbuildinfo

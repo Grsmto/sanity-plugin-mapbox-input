@@ -1,23 +1,40 @@
 # sanity-plugin-mapbox-input
 
-Sanity plugin providing input handlers for geo-related input types using Mapbox. 
-This plugin replaces the native Sanity `geopoint` type.
+Sanity Studio plugin that replaces the default `geopoint` input with an interactive Mapbox map.
 
-:warning: The plugin doesn't seem to work anymore due to some incompatibility with latest Sanity Studio. Please see `sanity-plugin-leaflet-input` as an alternative. :warning:
-
+> Requires Sanity Studio v3+. Compatible with `sanity` `^3 || ^4 || ^5 || ^6`.
 
 ## Installation
 
-- `sanity install mapbox-input`
-
-- Then write a valid Mapbox API token into `./config/mapbox-input.json`
-
-- `npm start`
+```sh
+npm install sanity-plugin-mapbox-input
+```
 
 ## Usage
-Use the `geopoint` type in your schema. Ex:
 
-```js
+Add the plugin in `sanity.config.ts` (or `.js`) with a valid [Mapbox access token](https://docs.mapbox.com/help/getting-started/access-tokens/):
+
+```ts
+import {defineConfig} from 'sanity'
+import {mapboxInput} from 'sanity-plugin-mapbox-input'
+
+export default defineConfig({
+  // ...
+  plugins: [
+    mapboxInput({
+      apiKey: 'pk.your-mapbox-token',
+      defaultZoom: 11,
+      defaultLocation: {lat: 40.7058254, lng: -74.1180863},
+    }),
+  ],
+})
+```
+
+This plugin replaces the default `geopoint` input component.
+
+Use a `geopoint` field in your schema:
+
+```ts
 export default {
   name: 'article',
   title: 'Article',
@@ -32,12 +49,28 @@ export default {
 }
 ```
 
-## Screenshot
+### Options
 
-<p hidden align="center">
-  <img src="https://user-images.githubusercontent.com/527559/86034638-5fa3c480-ba11-11ea-99d8-5b28aaf24817.jpg" width="520"  alt="Sanity Mapbox Input Plugin" />
-</p>
+| Option | Type | Default | Description |
+| --- | --- | --- | --- |
+| `apiKey` | `string` | required | Mapbox access token |
+| `defaultZoom` | `number` | `8` | Initial zoom when opening the map dialog |
+| `defaultLocation` | `{lat, lng}` | NYC-ish | Center used when no value is set |
+| `mapStyle` | `string` | `mapbox://styles/mapbox/streets-v12` | Mapbox style URL |
 
-## Related projects
+Ensure the token allows:
 
-https://github.com/rexxars/sanity-plugin-leaflet-input
+- Mapbox GL JS / Styles
+- Mapbox Geocoding API (search)
+- Mapbox Static Images API (preview)
+
+And that HTTP referrer restrictions include your Studio URL(s).
+
+## Related
+
+- [@sanity/google-maps-input](https://github.com/sanity-io/google-maps-input)
+- [sanity-plugin-leaflet-input](https://github.com/rexxars/sanity-plugin-leaflet-input)
+
+## License
+
+MIT
