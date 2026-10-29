@@ -49,7 +49,6 @@
     "build": "pkg-utils build --strict --check --clean",
     "clean": "rimraf dist",
     "dev": "npm run --prefix playground dev",
-    "demo": "npm run --prefix playground demo",
     "prepublishOnly": "npm run build",
     "watch": "pkg-utils watch --strict"
   },

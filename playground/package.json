@@ -5,8 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "sanity dev",
-    "demo": "vite --config demo/vite.config.ts",
-    "seed:locations": "node ./seed-locations.mjs",
     "build": "sanity build",
     "start": "sanity start"
   },
@@ -19,8 +17,6 @@
   },
   "devDependencies": {
     "@types/react": "^19.3.0",
-    "@vitejs/plugin-react": "^6.1.2",
-    "typescript": "~5.7.3",
-    "vite": "^8.3.5"
+    "typescript": "~5.7.3"
   }
 }
