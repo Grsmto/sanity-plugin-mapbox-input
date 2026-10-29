@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "sanity dev",
     "demo": "vite --config demo/vite.config.ts",
+    "seed:locations": "node ./seed-locations.mjs",
     "build": "sanity build",
     "start": "sanity start"
   },

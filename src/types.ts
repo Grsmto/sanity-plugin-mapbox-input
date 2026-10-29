@@ -13,6 +13,8 @@ export interface Geopoint {
   alt?: number
 }
 
+export type GeopointItem = Geopoint & {_key: string}
+
 export interface GeopointSchemaType extends ObjectSchemaType {}
 
 export interface MapboxInputConfig {
