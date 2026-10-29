@@ -20,10 +20,7 @@ export const Pin: FC<PinProps> = ({ size = 20, onClick }) => {
     <svg
       height={size}
       viewBox="0 0 24 24"
-      style={{
-        ...pinStyle,
-        transform: `translate(${-size / 2}px,${-size}px)`,
-      }}
+      style={pinStyle}
       onClick={onClick}
     >
       <path d={ICON} />
