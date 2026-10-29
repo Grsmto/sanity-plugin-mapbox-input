@@ -1,0 +1,11 @@
+.sanity-plugin-mapbox-input__previewImage {
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+.sanity-plugin-mapbox-input__dialogInner {
+  height: 40rem;
+  position: relative;
+  overflow: hidden;
+}

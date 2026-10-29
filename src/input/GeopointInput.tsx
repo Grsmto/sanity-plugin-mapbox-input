@@ -11,8 +11,8 @@ import {
   type Path,
 } from 'sanity'
 import type {Geopoint, GeopointSchemaType, LatLng, MapboxInputConfig} from '../types'
-import {DialogInnerContainer, PreviewImage} from './GeopointInput.styles'
 import {GeopointSelect} from './GeopointSelect'
+import './GeopointInput.css'
 
 const EMPTY_PATH: Path = []
 
@@ -105,7 +105,8 @@ export function GeopointInput(props: GeopointInputProps) {
     <Stack gap={3}>
       {value && (
         <ChangeIndicator path={path} isChanged={changed} hasFocus={!!focused}>
-          <PreviewImage
+          <img
+            className="sanity-plugin-mapbox-input__previewImage"
             src={getStaticImageUrl(value, config.apiKey)}
             alt="Map location"
             onClick={handleFocusButton}
@@ -152,7 +153,7 @@ export function GeopointInput(props: GeopointInputProps) {
           ref={dialogRef}
           width={1}
         >
-          <DialogInnerContainer>
+          <div className="sanity-plugin-mapbox-input__dialogInner">
             <GeopointSelect
               apiKey={config.apiKey}
               value={value || undefined}
@@ -161,7 +162,7 @@ export function GeopointInput(props: GeopointInputProps) {
               defaultZoom={config.defaultZoom}
               mapStyle={config.mapStyle}
             />
-          </DialogInnerContainer>
+          </div>
         </Dialog>
       )}
     </Stack>
