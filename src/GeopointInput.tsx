@@ -1,7 +1,7 @@
-import {useCallback, useEffect, useId, useRef, useState} from 'react'
-import {Box, Button, Dialog, Grid, Stack, Text} from '@sanity/ui'
-import {EditIcon} from '@sanity/icons/Edit'
-import {TrashIcon} from '@sanity/icons/Trash'
+import { useCallback, useEffect, useId, useRef, useState } from 'react'
+import { Box, Button, Dialog, Grid, Stack, Text } from '@sanity/ui'
+import { EditIcon } from '@sanity/icons/Edit'
+import { TrashIcon } from '@sanity/icons/Trash'
 import {
   ChangeIndicator,
   ObjectInputProps,
@@ -10,20 +10,28 @@ import {
   unset,
   type Path,
 } from 'sanity'
-import type {Geopoint, GeopointSchemaType, LatLng, MapboxInputConfig} from '../types'
-import {GeopointSelect} from './GeopointSelect'
-import './GeopointInput.css'
+import type {
+  Geopoint,
+  GeopointSchemaType,
+  LatLng,
+  MapboxInputConfig,
+} from './types'
+import { GeopointSelect } from './GeopointSelect'
+import '../styles/GeopointInput.css'
 
 const EMPTY_PATH: Path = []
 
 const getStaticImageUrl = (value: LatLng, apiKey: string) => {
-  const {lat, lng} = value
+  const { lat, lng } = value
   const overlay = `pin-s+d00(${lng},${lat})`
 
   return `https://api.mapbox.com/styles/v1/mapbox/streets-v12/static/${overlay}/${lng},${lat},13,0/640x300@2x?access_token=${apiKey}`
 }
 
-export type GeopointInputProps = ObjectInputProps<Geopoint, GeopointSchemaType> & {
+export type GeopointInputProps = ObjectInputProps<
+  Geopoint,
+  GeopointSchemaType
+> & {
   mapboxConfig: MapboxInputConfig
 }
 
@@ -52,7 +60,10 @@ export function GeopointInput(props: GeopointInputProps) {
   const schemaTypeName = schemaType.name
   const dialogId = useId()
   const dialogRef = useRef<HTMLDivElement | null>(null)
-  const handleFocusButton = useCallback(() => inputRef?.current?.focus(), [inputRef])
+  const handleFocusButton = useCallback(
+    () => inputRef?.current?.focus(),
+    [inputRef]
+  )
   const [modalOpen, setModalOpen] = useState(false)
 
   const handleCloseModal = useCallback(() => {
@@ -68,12 +79,12 @@ export function GeopointInput(props: GeopointInputProps) {
   const handleChange = useCallback(
     (latLng: LatLng) => {
       onChange([
-        setIfMissing({_type: schemaTypeName}),
+        setIfMissing({ _type: schemaTypeName }),
         set(latLng.lat, ['lat']),
         set(latLng.lng, ['lng']),
       ])
     },
-    [schemaTypeName, onChange],
+    [schemaTypeName, onChange]
   )
 
   const handleClear = useCallback(() => {
@@ -91,11 +102,14 @@ export function GeopointInput(props: GeopointInputProps) {
       <Stack gap={3}>
         <Text size={1}>
           The{' '}
-          <a href="https://www.sanity.io/docs/schema-types/geopoint-type">Geopoint type</a> needs a
-          Mapbox access token.
+          <a href="https://www.sanity.io/docs/schema-types/geopoint-type">
+            Geopoint type
+          </a>{' '}
+          needs a Mapbox access token.
         </Text>
         <Text size={1}>
-          Pass a valid token as <code>apiKey</code> in your <code>mapboxInput</code> plugin config.
+          Pass a valid token as <code>apiKey</code> in your{' '}
+          <code>mapboxInput</code> plugin config.
         </Text>
       </Stack>
     )
@@ -106,7 +120,7 @@ export function GeopointInput(props: GeopointInputProps) {
       {value && (
         <ChangeIndicator path={path} isChanged={changed} hasFocus={!!focused}>
           <img
-            className="sanity-plugin-mapbox-input__previewImage"
+            className="previewImage"
             src={getStaticImageUrl(value, config.apiKey)}
             alt="Map location"
             onClick={handleFocusButton}
@@ -153,7 +167,7 @@ export function GeopointInput(props: GeopointInputProps) {
           ref={dialogRef}
           width={1}
         >
-          <div className="sanity-plugin-mapbox-input__dialogInner">
+          <div className="dialogInner">
             <GeopointSelect
               apiKey={config.apiKey}
               value={value || undefined}

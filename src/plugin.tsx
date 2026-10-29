@@ -1,6 +1,6 @@
-import {definePlugin, type SchemaType} from 'sanity'
-import {GeopointInput, type GeopointInputProps} from './input/GeopointInput'
-import type {GeopointSchemaType, MapboxInputConfig} from './types'
+import { definePlugin, type SchemaType } from 'sanity'
+import { GeopointInput, type GeopointInputProps } from './GeopointInput'
+import type { GeopointSchemaType, MapboxInputConfig } from './types'
 
 export const mapboxInput = definePlugin<MapboxInputConfig>((config) => {
   return {
@@ -9,7 +9,10 @@ export const mapboxInput = definePlugin<MapboxInputConfig>((config) => {
       components: {
         input(props) {
           if (isGeopoint(props.schemaType)) {
-            const castedProps = props as unknown as Omit<GeopointInputProps, 'mapboxConfig'>
+            const castedProps = props as unknown as Omit<
+              GeopointInputProps,
+              'mapboxConfig'
+            >
 
             return <GeopointInput {...castedProps} mapboxConfig={config} />
           }

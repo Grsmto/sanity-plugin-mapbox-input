@@ -1,5 +1,10 @@
-export {GeopointInput, type GeopointInputProps} from './input/GeopointInput'
-export {GeopointSelect, type GeopointSelectProps} from './input/GeopointSelect'
-export {Pin} from './input/Pin'
-export type {LatLng, Geopoint, GeopointSchemaType, MapboxInputConfig} from './types'
-export {mapboxInput} from './plugin'
+export { GeopointInput, type GeopointInputProps } from './GeopointInput'
+export { GeopointSelect, type GeopointSelectProps } from './GeopointSelect'
+export { Pin } from './Pin'
+export type {
+  LatLng,
+  Geopoint,
+  GeopointSchemaType,
+  MapboxInputConfig,
+} from './types'
+export { mapboxInput } from './plugin'

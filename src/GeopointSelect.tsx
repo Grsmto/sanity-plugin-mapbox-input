@@ -1,4 +1,4 @@
-import {type FC, useCallback, useMemo, useState} from 'react'
+import { type FC, useCallback, useMemo, useState } from 'react'
 import Map, {
   Marker,
   type MapMouseEvent,
@@ -6,11 +6,11 @@ import Map, {
   type ViewStateChangeEvent,
 } from 'react-map-gl/mapbox'
 import 'mapbox-gl/dist/mapbox-gl.css'
-import type {Geopoint, LatLng} from '../types'
-import {GeocoderControl} from './GeocoderControl'
-import {Pin} from './Pin'
+import type { Geopoint, LatLng } from './types'
+import { GeocoderControl } from './GeocoderControl'
+import { Pin } from './Pin'
 
-const FALLBACK_LOCATION: LatLng = {lat: 40.7058254, lng: -74.1180863}
+const FALLBACK_LOCATION: LatLng = { lat: 40.7058254, lng: -74.1180863 }
 
 export interface GeopointSelectProps {
   apiKey: string
@@ -48,21 +48,21 @@ export const GeopointSelect: FC<GeopointSelectProps> = ({
     (latLng: LatLng) => {
       onChange?.(latLng)
     },
-    [onChange],
+    [onChange]
   )
 
   const handleMarkerDragEnd = useCallback(
     (event: MarkerDragEvent) => {
-      setValue({lat: event.lngLat.lat, lng: event.lngLat.lng})
+      setValue({ lat: event.lngLat.lat, lng: event.lngLat.lng })
     },
-    [setValue],
+    [setValue]
   )
 
   const handleMapClick = useCallback(
     (event: MapMouseEvent) => {
-      setValue({lat: event.lngLat.lat, lng: event.lngLat.lng})
+      setValue({ lat: event.lngLat.lat, lng: event.lngLat.lng })
     },
-    [setValue],
+    [setValue]
   )
 
   const handleMove = useCallback((event: ViewStateChangeEvent) => {
@@ -78,11 +78,12 @@ export const GeopointSelect: FC<GeopointSelectProps> = ({
         longitude: latLng.lng,
       }))
     },
-    [setValue],
+    [setValue]
   )
 
   const language =
-    locale || (typeof navigator !== 'undefined' ? navigator.language : undefined)
+    locale ||
+    (typeof navigator !== 'undefined' ? navigator.language : undefined)
 
   return (
     <Map
@@ -90,7 +91,7 @@ export const GeopointSelect: FC<GeopointSelectProps> = ({
       onMove={handleMove}
       mapboxAccessToken={apiKey}
       mapStyle={mapStyle}
-      style={{width: '100%', height: '100%'}}
+      style={{ width: '100%', height: '100%' }}
       onClick={handleMapClick}
     >
       <GeocoderControl
